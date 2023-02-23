@@ -9,12 +9,22 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 
     <!-- JS -->
-    <script src="{{ url_for('static', filename='js/query.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/query.js') }}"></script> -->
 
     <title>The Empty Canvas</title>
 </head>
 
 <body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        <div class="popouts landpop" style="display: flex;">
+            {% for category, message in messages %}
+                <div class="popouts__message">
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endwith %}
+
     <h1>The Empty Canvas</h1>
 </body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+        *{
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        table{
+            padding: 16px;
+            background-color: #eee;
+        }
+
+        .inner{
+            background-color: white;
+            padding: 16px;
+            max-width: 640px;
+            border-radius: 3.4px;
+            justify-self: center;
+            text-align: justify;
+        }
+
+        .box p{
+            font-weight: 500;
+        }
+
+        .logo{
+            background: linear-gradient(90deg,#000272 0%, rgb(25, 25, 35) 95%);
+            border-radius: 3.2px;
+            margin-bottom: 48px;
+        }
+
+        .logo img{
+            max-width: 320px;
+        }
+
+        .signature p{
+            margin: 0;
+        }
+
+        .footer{
+            font-weight: 400;
+            font-size: 12.8px;
+            padding-top: 8px;
+            margin-top: 32px;
+            border-top: 2px solid #ccc;
+        }
+
+        .logo2{
+            padding-top: 16px;
+        }
+
+        .logo2 img{
+            height: 32px;
+            width: max-content;
+        }
+
+        .logo2 p{
+            margin-top: -3.2px;
+        }
+    </style>
+</head>
+<body>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center">
+            <div class="inner">
+                <div class="logo" align="center">
+                    <img src="https://mypinoymotors.com/static/images/mpm-banner-sentence.png" alt="MyPinoyMotors Banner">
+                </div>
+
+                <h1 style="font-size: 15pt;">Hi Dancis,</h1>
+                <p>{{ message }}</p>
+
+                <div class="signature">
+                    <p>Sincere,</p>
+                    <p>MyPinoyMotors Team</p>
+                </div>
+
+                <div class="footer">
+                    <p style="font-size: 8pt;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt modi eveniet ipsam ab praesentium labore eligendi, nesciunt quibusdam quod fugit, voluptas id. Libero excepturi quibusdam corporis temporibus? Modi officiis enim ad vitae nostrum assumenda, eum ut eos voluptate, repellendus qui!</p>
+
+                    <div class="logo2">
+                        <img src="https://mypinoymotors.com/static/images/mpm-banner-sentence-blue.png" alt="MyPinoyMotors Logo">
+                        <p style="font-size: 8pt;">@ 2023 mypinoymotors.com</p>
+                    </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+    </table>
+</body>
+</html>
