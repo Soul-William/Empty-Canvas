@@ -1,16 +1,32 @@
 from web import app, mail
-from flask import render_template, redirect, request, url_for, flash
+from flask import render_template, redirect, request, url_for, flash, session
 from flask_mail import Message
 from datetime import datetime, date
-import logging, os
+import logging, os, smtplib
 
 
-def send_email(subject, message):
+def send_email(subject, message): #with template
     recipient = 'bornkenneth18@gmail.com'
     subject = subject
     msg = Message(subject, sender=app.config['MAIL_USERNAME'], recipients=[recipient])
     msg.html = render_template('emailtemp.html', message=message)
     mail.send(msg)
+
+def send_email(subject, message): #without template
+    gmail_user = 'kwsd.webcom'
+    gmail_password = 'irwmckwkkfwpovbt'
+
+    sent_from = gmail_user
+    to = ['bornkenneth18@gmail.com']
+    subject = subject
+    body = message
+
+    message = 'Subject: {}\n\n{}'.format(subject, body)
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(gmail_user, gmail_password)
+    server.sendmail(sent_from, to, message)
+    server.quit()
 
 def error_log(e):
     today = date.today()
@@ -65,18 +81,8 @@ def handle_exception(e):
 def landingpage():
     return render_template('landingPage.html')
 
-@app.route('/try')
-def trys():
-    return render_template('tryPage.html')
 
-@app.route('/send_email')
-def send_email2():
-    recipient = 'bornkenneth18@gmail.com'
-    subject = 'Subject of the email'
-    message_body = 'Body of the email'
-    msg = Message(subject, sender=app.config['MAIL_USERNAME'], recipients=[recipient])
-    msg.html = render_template('emailtemp.html', message_body=message_body)
-    mail.send(msg)
-    return 'Email sent'
+
+
 
 
